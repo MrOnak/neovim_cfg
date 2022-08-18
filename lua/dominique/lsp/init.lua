@@ -3,5 +3,6 @@ if not status_ok then
 	return
 end
 
-require("dominique.lsp.lsp-installer")
+-- require("dominique.lsp.lsp-installer")
+require("dominique.lsp.mason")
 require("dominique.lsp.handlers").setup()
