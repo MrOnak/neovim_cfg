@@ -29,6 +29,9 @@ function M.on_attach(client, bufnr)
   -- See `:help formatexpr` for more information.
   vim.api.nvim_buf_set_option(bufnr, "formatexpr", "v:lua.vim.lsp.formatexpr()")
 
+  -- Configure key mappings
+  require("config.lsp.keymaps").setup(client, bufnr)
+
   -- configure other LSP plugins here
 end
 
@@ -91,7 +94,4 @@ function M.remove_unused_imports()
 end
 
 return M
--- require("dominique.lsp.mason")
--- require("dominique.lsp.mason-tool-installer")
--- require("dominique.lsp.mason-lspconfig")
 

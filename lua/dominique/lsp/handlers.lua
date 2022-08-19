@@ -18,15 +18,16 @@ function M.setup()
   -- LSP handlers configuration
   local config = {
     float = {
-      focusable = true,
+      focusable = false,
       style = "minimal",
       border = "single",
+      width = 60,
     },
 
     diagnostic = {
-      -- virtual_text = false,
+      virtual_text = true,
       -- virtual_text = { spacing = 4, prefix = "●" },
-      virtual_text = { severity = vim.diagnostic.severity.ERROR },
+      -- virtual_text = { severity = vim.diagnostic.severity.ERROR },
       signs = {
         active = signs,
       },
@@ -34,7 +35,7 @@ function M.setup()
       update_in_insert = false,
       severity_sort = true,
       float = {
-        focusable = true,
+        focusable = false,
         style = "minimal",
         border = "single",
         source = "always",

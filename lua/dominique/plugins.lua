@@ -8,8 +8,8 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
   -- misc
-  use "nvim-lua/plenary.nvim" -- useful lua functions used by lots of plugins
-
+  use "nvim-lua/plenary.nvim"         -- useful lua functions used by lots of plugins
+  use "windwp/nvim-autopairs"         -- automagically closes bracket and quote pairs
   -- color schemes
   use 'folke/tokyonight.nvim'
 
@@ -21,7 +21,7 @@ return require('packer').startup(function(use)
   use "williamboman/mason.nvim"       -- updated package installer, superseeds lsp installer
   use "williamboman/mason-lspconfig.nvim"
   use "WhoIsSethDaniel/mason-tool-installer.nvim"
-  
+
   -- code completion
   use "hrsh7th/nvim-cmp"              -- the completion plugin
   use "hrsh7th/cmp-buffer"            -- extension for buffer completions
