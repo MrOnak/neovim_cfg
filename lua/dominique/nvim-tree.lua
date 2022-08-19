@@ -16,7 +16,6 @@ nvim_tree.setup({
     side = "left",
     mappings = {
       list = {
-        { key = "u", action = "dir_up" },
       },
     },
   },
