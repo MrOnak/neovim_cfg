@@ -1,8 +1,9 @@
---neovim general configuration
-require("dominique.options")
--- cmp code completion
-require("dominique.cmp")
--- language server protocol
-require("dominique.lsp").setup()
--- auto-closing of brackets and quotes
-require("dominique.autopairs").setup()
+
+require("dominique.options")            -- neovim general configuration
+require("dominique.cmp")                -- cmp code completion
+require("dominique.lsp").setup()        -- language server protocol
+require("dominique.telescope")          -- telescope
+require("dominique.toggleterm")         -- toggle-able floating terminal
+require("dominique.nvim-tree")          -- better file explorer
+require("dominique.autopairs").setup()  -- auto-closing of brackets and quotes
+

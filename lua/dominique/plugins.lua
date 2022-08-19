@@ -8,13 +8,38 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
   -- misc
-  use "nvim-lua/plenary.nvim"         -- useful lua functions used by lots of plugins
   use "windwp/nvim-autopairs"         -- automagically closes bracket and quote pairs
+  use "akinsho/toggleterm.nvim"       -- toggle-able floating terminal
+
+  -- nvim tree as file explorer
+  use {
+    'kyazdani42/nvim-tree.lua',
+    requires = {
+      --'kyazdani42/nvim-web-devicons', -- optional, for file icons
+    },
+    tag = 'nightly' -- optional, updated every week. (see issue #1193)
+  }
+
   -- color schemes
   use 'folke/tokyonight.nvim'
 
   -- languages
   use "folke/lua-dev.nvim"            -- useful for sumneko_lua LSP
+
+  -- Telescope
+  use {
+    "nvim-telescope/telescope.nvim", tag = "0.1.0",
+    requires = {
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope-live-grep-args.nvim",
+      -- required for live-grep (sudo apt install fd-find)
+      "sharkdp/fd",
+      -- faster grep, required by Telescope.live_grep (sudo apt install ripgrep)
+      "BurntSushi/ripgrep",
+      -- performance improvements for telescope sorts
+      {"nvim-telescope/telescope-fzf-native.nvim", run = "make"},
+    },
+  }
 
   -- LSP
   use "neovim/nvim-lspconfig"         -- enable LSP

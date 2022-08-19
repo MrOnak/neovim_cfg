@@ -23,9 +23,15 @@ keymap("n", "<C-j>", "<C-w>j", opts) -- Ctrl-j: down
 keymap("n", "<C-k>", "<C-w>k", opts) -- Ctrl-k: up
 keymap("n", "<C-l>", "<C-w>l", opts) -- Ctrl-l: right 
 
+-- Telescope
+keymap("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
+keymap("n", "<c-t>", "<cmd>Telescope live_grep<cr>", opts)
+
 -- toggle (!) explorer on the left side with width 30
 -- loaded file will open in the original window where the command was issued
-keymap("n", "<leader>e", ":Lex 30<CR>", opts)
+--keymap("n", "<leader>e", ":Lex 30<CR>", opts)
+-- nvim-tree toggle for the same purpose as above
+keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
 
 -- resize with cursor keys
 -- for this to work over PuTTY, two PuTTY settings are required:
@@ -43,5 +49,4 @@ keymap("n", "<S-h", ":bprevious<CR>", opts)
 ---- TERMINAL MODE
 -- get out of interactive mode on German keyboard (C-\ doesn't exist)
 keymap("t", "<C-q>", "<C-\\><C-N>", term_opts)
-
 
