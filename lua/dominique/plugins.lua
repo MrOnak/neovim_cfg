@@ -13,6 +13,9 @@ return require('packer').startup(function(use)
   -- color schemes
   use 'folke/tokyonight.nvim'
 
+  -- languages
+  use "folke/lua-dev.nvim"            -- useful for sumneko_lua LSP
+
   -- LSP
   use "neovim/nvim-lspconfig"         -- enable LSP
   use "williamboman/mason.nvim"       -- updated package installer, superseeds lsp installer
