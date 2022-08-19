@@ -3,6 +3,8 @@ if not status_ok then
   return
 end
 
+print("setting up mason")
+
 mason.setup({
   ui = {
     border = "single",

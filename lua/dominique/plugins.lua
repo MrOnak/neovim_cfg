@@ -13,6 +13,12 @@ return require('packer').startup(function(use)
   -- color schemes
   use 'folke/tokyonight.nvim'
 
+  -- LSP
+  use "neovim/nvim-lspconfig"         -- enable LSP
+  use "williamboman/mason.nvim"       -- updated package installer, superseeds lsp installer
+  use "williamboman/mason-lspconfig.nvim"
+  use "WhoIsSethDaniel/mason-tool-installer.nvim"
+  
   -- code completion
   use "hrsh7th/nvim-cmp"              -- the completion plugin
   use "hrsh7th/cmp-buffer"            -- extension for buffer completions
@@ -24,8 +30,4 @@ return require('packer').startup(function(use)
   -- snippets
   use "L3MON4D3/LuaSnip"              -- snippet engine, require by cmp
   use "rafamadriz/friendly-snippets"  -- a bunch of community curated snippets
-
-  -- LSP
-  use "neovim/nvim-lspconfig"         -- enable LSP
-  use "williamboman/mason.nvim"       -- updated package installer, superseeds lsp installer
 end)
