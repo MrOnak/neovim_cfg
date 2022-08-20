@@ -31,7 +31,7 @@ function M.setup(servers, options)
 
   print("  mason-tool-installer")
   require("mason-tool-installer").setup {
-    ensure_installed = { 
+    ensure_installed = {
       -- "codelldb", 
       -- "stylua", 
       -- "shfmt", 
