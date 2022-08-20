@@ -51,7 +51,7 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
 -- navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
-keymap("n", "<S-h", ":bprevious<CR>", opts)
+keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
 ---- TERMINAL MODE
 -- get out of interactive mode on German keyboard (C-\ doesn't exist)
