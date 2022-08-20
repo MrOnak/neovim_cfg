@@ -26,6 +26,12 @@ return require('packer').startup(function(use)
   -- languages
   use "folke/lua-dev.nvim"            -- useful for sumneko_lua LSP
 
+  -- Treesitter
+  use {
+    "nvim-treesitter/nvim-treesitter",
+    run = ":TSUpdate",
+  }
+
   -- Telescope
   use {
     "nvim-telescope/telescope.nvim", tag = "0.1.0",
