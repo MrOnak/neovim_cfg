@@ -43,9 +43,10 @@ telescope.setup {
       n = {
         ["<esc>"] = actions.close,
         ["<CR>"] = actions.select_default,
-        ["<C-x>"] = actions.select_horizontal,
-        ["<C-v>"] = actions.select_vertical,
-        ["<C-t>"] = actions.select_tab,
+        ["<C-x>"] = actions.select_horizontal,     -- go to file selection as a split
+        ["<C-v>"] = actions.select_vertical,       -- go to file selection as a vertical split
+        ["<C-t>"] = actions.select_tab,            -- go to file selection as a tab 
+
 
         ["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
         ["<S-Tab>"] = actions.toggle_selection + actions.move_selection_better,

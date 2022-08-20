@@ -25,7 +25,14 @@ keymap("n", "<C-l>", "<C-w>l", opts) -- Ctrl-l: right
 
 -- Telescope
 keymap("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
-keymap("n", "<c-t>", "<cmd>Telescope live_grep<cr>", opts)
+keymap("n", "<leader>t", "<cmd>Telescope live_grep<cr>", opts)
+keymap("n", "<leader>g",
+  "<cmd>lua require'telescope.builtin'.find_files({find_command={'fd', vim.fn.expand('<cword>')}})<cr>",
+  opts
+)
+keymap("n", "<leader>G", "<cmd>lua require'telescope.builtin'.git_status()<cr>", opts)
+--keymap("n", "<leader>i", "<cmd>lua require'telescope.builtin'.lsp_implementations(require('telescope.themes').get_dropdown())<cr>", opts)
+keymap("n", "<leader>i", "<cmd>lua require'telescope.builtin'.grep_string(require('telescope.themes').get_dropdown())<cr>", opts)
 
 -- toggle (!) explorer on the left side with width 30
 -- loaded file will open in the original window where the command was issued
