@@ -11,9 +11,9 @@ function M.setup(servers, options)
     ui = {
       border = "single",
       icons = {
-        package_installed = "/", -- icons.server_installed,
-        package_pending = "?", -- icons.server_pending,
-        package_uninstalled = "x", -- icons.server_uninstalled,
+        package_installed = "✓",
+        package_pending = "➜",
+        package_uninstalled = "✗"
       },
       keymaps = {
         toggle_package_expand = "<CR>",   -- expand a package
