@@ -72,4 +72,38 @@ bind -x '"\C-t": _ssh_add_key'
 * `sudo apt update`
 * `sudo apt install neovim`
 
+# install ranger window manager and addon dependencies
+* `suto apt install ranger atool unrar highlight mediainfo caca-utils kitty imagemagick w3m w3m-img`
+
+copy ranger config files to ~/.config
+* `ranger --copy-config=commands`
+* `ranger --copy-config=scope`
+* `ranger --copy-config=rifle`
+* `ranger --copy-config=rc`
+
+enable image preview powered by w3m
+`vi ~/.config/ranger/rc.conf`
+
+set parameter `set image_preview` to true
+
+# aethetics in i3
+* `sudo apt install picom feh`
+* `cp /usr/share/doc/picom/examples/picom.sample.conf ~/.config/picom.conf`
+* `vi ~/.config/i3/config`
+
+add these lines
+```
+# picom for opacity and things (https://wiki.archlinux.org/title/Picom) 
+exec --no-startup-id picom --config ~/.config/picom.conf
+
+# feh handles wallpapers (https://man.archlinux.org/man/feh.1)
+exec_always --no-startup-id feh --bg-fill ~/Pictures/wallpapers/mars.jpg ~/Pictures/wallpapers/earth3.jpg
+
+```
+
+# i3 applications
+* chromium
+* chromium extensions: ghostery, adblock plus, dark reader, bitwarden
+* vlc
+* vlc skin: Blue Steel
 
