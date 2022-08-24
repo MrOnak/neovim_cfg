@@ -72,7 +72,7 @@ bind -x '"\C-t": _ssh_add_key'
 * `sudo apt update`
 * `sudo apt install neovim`
 
-# install ranger window manager and addon dependencies
+# install ranger file manager and addon dependencies
 * `suto apt install ranger atool unrar highlight mediainfo caca-utils kitty imagemagick w3m w3m-img`
 
 copy ranger config files to ~/.config
@@ -85,6 +85,26 @@ enable image preview powered by w3m
 `vi ~/.config/ranger/rc.conf`
 
 set parameter `set image_preview` to true
+
+go through the whole file and change other things. 
+
+rc.conf is also the place to add / change keybinds
+
+## ranger plugins
+### devicons (relies on nerdfont)
+* `git clone https://github.com/alexanderjeurissen/ranger_devicons ~/.config/ranger/plugins/ranger_devicons`
+* `echo "default_linemode devicons" >> $HOME/.config/ranger/rc.conf`
+
+### FZF integration
+copy the "fzf integration" plugin to `~/.config/ranger/commands.py`
+
+add keybind to `~/.config/ranger.rc.conf`
+
+comment out the emacs mappings as they're blocking Ctrl-f
+
+find the `# Searching` block and add:
+
+`map <C-f> fzf_select`
 
 # aethetics in i3
 * `sudo apt install picom feh`
@@ -101,9 +121,12 @@ exec_always --no-startup-id feh --bg-fill ~/Pictures/wallpapers/mars.jpg ~/Pictu
 
 ```
 
+## use nerdfont to improve the i3status
+
+TODO
+
 # i3 applications
 * chromium
-* chromium extensions: ghostery, adblock plus, dark reader, bitwarden
-* vlc
-* vlc skin: Blue Steel
-
+* chromium extensions: ghostery, adblock plus, dark reader, bitwarden, smartup gestures
+* celluloid - GUI for mpv media player. also add mpv-mpris to enable media key control
+* qalculate (set this to floating in i3/config: `for_window [class="Qalculate" instance="qalculate"] floating enable`)
