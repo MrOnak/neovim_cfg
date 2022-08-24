@@ -10,11 +10,7 @@ function M.setup(servers, options)
   require("mason").setup {
     ui = {
       border = "single",
-      icons = {
-        package_installed = "✓",
-        package_pending = "➜",
-        package_uninstalled = "✗"
-      },
+      icons = require("dominique.glyphs").mason,
       keymaps = {
         toggle_package_expand = "<CR>",   -- expand a package
         install_package = "i",            -- install the package under the current cursor position
