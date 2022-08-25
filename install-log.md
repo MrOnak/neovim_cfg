@@ -139,6 +139,7 @@ font pango:Hack Nerd Font Mono, pango:Ubuntu Mono, pango:monospace 10
 * `sudo apt install ncmpcpp mpd mpdris2 mpc` - console based media player 
   * comment-out wildmidi in /etc/mpd.conf, also see ~/.config/ncmpcpp/ and ~/.config/mpd/
   * add keybinds for media keys to ~/.config/i3/config
+  * allow mpd to run as user: `systemctl --user enable mpd`
 
 # i3 applications
 * chromium
