@@ -123,10 +123,25 @@ exec_always --no-startup-id feh --bg-fill ~/Pictures/wallpapers/mars.jpg ~/Pictu
 
 ## use nerdfont to improve the i3status
 
-TODO
+add this to ~/.config/i3/config:
+
+```
+font pango:Hack Nerd Font Mono, pango:Ubuntu Mono, pango:monospace 10
+```
+
+# libraries and tools
+* `sudo apt install autoconf automake libtool libncurses libncurses5 dconf-editor apt-file`
+
+# CLI tools
+* `sudo apt install rxvt-unicode` - terminal emulator
+  * @TODO must include config ~/.Xdefaults here
+  * change `i3-sensible-terminal` to `rxvt-unicode` in ~/.config/i3/config
+* `sudo apt install ncmpcpp mpd mpdris2 mpc` - console based media player 
+  * comment-out wildmidi in /etc/mpd.conf, also see ~/.config/ncmpcpp/ and ~/.config/mpd/
+  * add keybinds for media keys to ~/.config/i3/config
 
 # i3 applications
 * chromium
-* chromium extensions: ghostery, adblock plus, dark reader, bitwarden, smartup gestures
-* celluloid - GUI for mpv media player. also add mpv-mpris to enable media key control
-* qalculate (set this to floating in i3/config: `for_window [class="Qalculate" instance="qalculate"] floating enable`)
+  * chromium extensions: ghostery, adblock plus, dark reader, bitwarden, smartup gestures
+* `sudo apt install qalculate`
+  * (set this to floating in i3/config: `for_window [class="Qalculate" instance="qalculate"] floating enable`)
