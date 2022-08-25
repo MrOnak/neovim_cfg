@@ -147,3 +147,32 @@ font pango:Hack Nerd Font Mono, pango:Ubuntu Mono, pango:monospace 10
 * `sudo apt install qalculate`
   * (set this to floating in i3/config: `for_window [class="Qalculate" instance="qalculate"] floating enable`)
 
+# switching to ZSH
+* `sudo apt install zsh`
+* go to https://github.com/romkatv/powerlevel10k and follow instructions
+* add custom bits to .zshrc before powerlevel10k-theme is sourced:
+
+```
+# load aliases
+if [ -f ~/.sh_aliases ]; then
+    . ~/.sh_aliases
+fi
+
+# ssh agent
+ssh-add-key() {
+  echo "register SSH key password"
+  eval $(ssh-agent)
+  ssh-add ~/.ssh/mrOnak_at_github_2022
+}
+zle     -N            ssh-add-key
+bindkey -M emacs '^T' ssh-add-key
+bindkey -M vicmd '^T' ssh-add-key
+bindkey -M viins '^T' ssh-add-key
+
+# FZF
+#export FZF_DEFAULT_OPTS="--height 40% --border=sharp --no-unicode --layout=reverse-list --preview='head -10 {}' --preview-window='right,40%,border-left,wrap'"
+export FZF_DEFAULT_OPTS="--height 40% --border=sharp --no-unicode --preview='head -10 {}' --preview-window='right,40%,border-left,wrap'"
+export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix --hidden --follow --exclude .git'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+```
