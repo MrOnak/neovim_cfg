@@ -145,3 +145,4 @@ font pango:Hack Nerd Font Mono, pango:Ubuntu Mono, pango:monospace 10
   * chromium extensions: ghostery, adblock plus, dark reader, bitwarden, smartup gestures
 * `sudo apt install qalculate`
   * (set this to floating in i3/config: `for_window [class="Qalculate" instance="qalculate"] floating enable`)
+
