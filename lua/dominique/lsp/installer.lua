@@ -1,6 +1,6 @@
 local M = {}
 
-print("setting up mason installer plugin")
+print("lsp/installer")
 
 function M.setup(servers, options)
   local lspconfig = require "lspconfig"

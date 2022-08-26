@@ -1,5 +1,7 @@
 local M = {}
 
+print("lsp/keymaps")
+
 -- TODO: backfill this to template
 M.setup = function()
 	local signs = require("lua.dominique.glyphs").lsp_diagnostics

@@ -1,8 +1,6 @@
 local M = {}
 
-print("setting up lsp handlers")
-
--- local icons = require "config.icons"
+print("lsp/handlers")
 
 function M.setup()
   local signs = require("dominique.glyphs").lsp_diagnostics
