@@ -1,12 +1,4 @@
---[[
-local status_ok, _ = pcall(require, "lspconfig")
-if not status_ok then
-	return
-end
---]]
--- require("dominique.lsp.lsp-installer")
--- require("dominique.lsp.handlers").setup()
-
+-- https://github.com/alpha2phi/neovim-for-beginner/blob/50-package-manager/
 local M = {}
 
 print("lsp/init")
