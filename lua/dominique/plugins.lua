@@ -55,6 +55,14 @@ return packer.startup(function(use)
   -- color schemes
   use 'folke/tokyonight.nvim'
 
+  -- status line
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = {
+      'kyazdani42/nvim-web-devicons', opt = true
+    }
+  }
+
   -- languages
   use "folke/lua-dev.nvim"            -- useful for sumneko_lua LSP
 
