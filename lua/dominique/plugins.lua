@@ -80,6 +80,14 @@ return packer.startup(function(use)
   use "saadparwaiz1/cmp_luasnip"      -- extension for snippet completions
   use "hrsh7th/cmp-nvim-lsp"          -- extension for LSP completions in cmp
 
+  -- telescope fuzzy finder
+  use {
+    'nvim-telescope/telescope.nvim', tag = '0.1.0',
+    requires= {
+      'nvim-lua/plenary.nvim'
+    }
+  }
+
   -- snippets
   use "L3MON4D3/LuaSnip"              -- snippet engine, require by cmp
   use "rafamadriz/friendly-snippets"  -- a bunch of community curated snippets
