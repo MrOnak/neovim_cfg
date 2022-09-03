@@ -72,27 +72,6 @@ return packer.startup(function(use)
     run = ":TSUpdate",
   }
 
-  -- Telescope
-  use {
-    "nvim-telescope/telescope.nvim", tag = "0.1.0",
-    requires = {
-      "nvim-lua/plenary.nvim",
-      "nvim-telescope/telescope-live-grep-args.nvim",
-      -- required for live-grep (sudo apt install fd-find)
-      "sharkdp/fd",
-      -- faster grep, required by Telescope.live_grep (sudo apt install ripgrep)
-      "BurntSushi/ripgrep",
-      -- performance improvements for telescope sorts
-      {"nvim-telescope/telescope-fzf-native.nvim", run = "make"},
-    },
-  }
-
-  -- LSP
-  use "neovim/nvim-lspconfig"         -- enable LSP
-  use "williamboman/mason.nvim"       -- updated package installer, superseeds lsp installer
-  use "williamboman/mason-lspconfig.nvim"
-  use "WhoIsSethDaniel/mason-tool-installer.nvim"
-
   -- code completion
   use "hrsh7th/nvim-cmp"              -- the completion plugin
   use "hrsh7th/cmp-buffer"            -- extension for buffer completions
