@@ -1,4 +1,4 @@
-print("nvim-tree")
+print("setting up nvim-tree")
 
 local status_ok, nvim_tree = pcall(require, "nvim-tree")
 if not status_ok then
