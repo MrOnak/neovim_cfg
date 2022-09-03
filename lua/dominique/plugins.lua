@@ -84,7 +84,11 @@ return packer.startup(function(use)
   use {
     'nvim-telescope/telescope.nvim', tag = '0.1.0',
     requires= {
-      'nvim-lua/plenary.nvim'
+      {'nvim-lua/plenary.nvim'},
+      {'kyazdani42/nvim-web-devicons'},
+      {'BurntSushi/ripgrep'},
+      {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
+      {'sharkdp/fd'},
     }
   }
 
