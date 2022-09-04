@@ -42,17 +42,23 @@ return packer.startup(function(use)
   -- color schemes
   use 'folke/tokyonight.nvim'
 
+  -- treesitter
+  use {
+    "nvim-treesitter/nvim-treesitter",
+    run = ":TSUpdate",
+  }
+
   -- telescope fuzzy finder
   use {
-    'nvim-telescope/telescope.nvim', tag = '0.1.0',
+    "nvim-telescope/telescope.nvim",
     requires = {
-      {'BurntSushi/ripgrep'},
-      {'sharkdp/fd'},
-      {'nvim-lua/plenary.nvim'},
-      {'kyazdani42/nvim-web-devicons'},
-      --{'nvim-telescope/telescope-media-files.nvim'},
+      {"BurntSushi/ripgrep"},
+      {"sharkdp/fd"},
+      {"nvim-lua/plenary.nvim"},
+      {"kyazdani42/nvim-web-devicons"},
+      --{"nvim-telescope/telescope-media-files.nvim"},
       --{"nvim-telescope/telescope-symbols.nvim"},
-      --{'nvim-telescope/telescope-fzf-native.nvim', run = 'make'},
+      --{"nvim-telescope/telescope-fzf-native.nvim", run = "make"},
     }
   }
 end)
