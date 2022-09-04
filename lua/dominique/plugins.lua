@@ -39,50 +39,8 @@ return packer.startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
-  -- misc
-  use "windwp/nvim-autopairs"         -- automagically closes bracket and quote pairs
-  use "akinsho/toggleterm.nvim"       -- toggle-able floating terminal
-
-  -- nvim tree as file explorer
-  use {
-    'kyazdani42/nvim-tree.lua',
-    requires = {
-      'kyazdani42/nvim-web-devicons', -- optional, for file icons
-    },
-    tag = 'nightly' -- optional, updated every week. (see issue #1193)
-  }
-
   -- color schemes
   use 'folke/tokyonight.nvim'
-
-  -- status line
-  use {
-    'nvim-lualine/lualine.nvim',
-    requires = {
-      'kyazdani42/nvim-web-devicons', opt = true
-    }
-  }
-
-  -- snippets
-  use "L3MON4D3/LuaSnip"              -- snippet engine, require by cmp
-  use "rafamadriz/friendly-snippets"  -- a bunch of community curated snippets
-
-  -- languages
-  use "folke/lua-dev.nvim"            -- useful for sumneko_lua LSP
-
-  -- Treesitter
-  use {
-    "nvim-treesitter/nvim-treesitter",
-    run = ":TSUpdate",
-  }
-
-  -- code completion
-  use "hrsh7th/nvim-cmp"              -- the completion plugin
-  use "hrsh7th/cmp-buffer"            -- extension for buffer completions
-  use "hrsh7th/cmp-path"              -- extension for path completions 
-  use "hrsh7th/cmp-cmdline"           -- extension for command-line completions
-  use "saadparwaiz1/cmp_luasnip"      -- extension for snippet completions
-  use "hrsh7th/cmp-nvim-lsp"          -- extension for LSP completions in cmp
 
   -- telescope fuzzy finder
   use {
@@ -97,14 +55,4 @@ return packer.startup(function(use)
       --{'nvim-telescope/telescope-fzf-native.nvim', run = 'make'},
     }
   }
-
-  -- telekasten: a zettelkasten-inspired, markdown-based note app
-  -- https://github.com/renerocksai/telekasten.nvim
-  use {
-    "renerocksai/telekasten.nvim",
-    requires = {
-      {"nvim-telescope/telescope-symbols.nvim"},
-    }
-  }
-
 end)
