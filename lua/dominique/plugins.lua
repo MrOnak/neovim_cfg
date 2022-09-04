@@ -46,9 +46,9 @@ return packer.startup(function(use)
       {"sharkdp/fd"},
       {"nvim-lua/plenary.nvim"},
       {"kyazdani42/nvim-web-devicons"},
-      --{"nvim-telescope/telescope-media-files.nvim"},
-      --{"nvim-telescope/telescope-symbols.nvim"},
-      --{"nvim-telescope/telescope-fzf-native.nvim", run = "make"},
+      {"nvim-telescope/telescope-media-files.nvim"},
+      {"nvim-telescope/telescope-symbols.nvim"},
+      {"nvim-telescope/telescope-fzf-native.nvim", run = "make"},
     }
   }
 
