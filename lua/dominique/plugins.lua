@@ -63,6 +63,10 @@ return packer.startup(function(use)
     }
   }
 
+  -- snippets
+  use "L3MON4D3/LuaSnip"              -- snippet engine, require by cmp
+  use "rafamadriz/friendly-snippets"  -- a bunch of community curated snippets
+
   -- languages
   use "folke/lua-dev.nvim"            -- useful for sumneko_lua LSP
 
@@ -83,14 +87,14 @@ return packer.startup(function(use)
   -- telescope fuzzy finder
   use {
     'nvim-telescope/telescope.nvim', tag = '0.1.0',
-    requires= {
-      {'nvim-telescope/telescope-media-files.nvim'},
-      --{'nvim-telescope/telescope-fzf-native.nvim'},
-      --{'nvim-telescope/telescope-fzy-native.nvim'},
-      {'nvim-lua/plenary.nvim'},
-      {'kyazdani42/nvim-web-devicons'},
+    requires = {
       {'BurntSushi/ripgrep'},
       {'sharkdp/fd'},
+      {'nvim-lua/plenary.nvim'},
+      {'kyazdani42/nvim-web-devicons'},
+      --{'nvim-telescope/telescope-media-files.nvim'},
+      --{"nvim-telescope/telescope-symbols.nvim"},
+      --{'nvim-telescope/telescope-fzf-native.nvim', run = 'make'},
     }
   }
 
@@ -103,11 +107,4 @@ return packer.startup(function(use)
     }
   }
 
-  -- a fzf integration separate from telescope since I can't get that to work
---  use 'ibhagwan/fzf-lua'
---  use {'junegunn/fzf', run = './install --bin', }
-
-  -- snippets
-  use "L3MON4D3/LuaSnip"              -- snippet engine, require by cmp
-  use "rafamadriz/friendly-snippets"  -- a bunch of community curated snippets
 end)
