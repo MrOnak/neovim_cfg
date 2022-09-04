@@ -40,6 +40,7 @@ keymap("n", "<leader>t", ":Telescope<CR>", opts)
 keymap("n", "<leader>tf", ":Telescope find_files<CR>", opts)
 keymap("n", "<leader>tb", ":Telescope buffers<CR>", opts)
 keymap("n", "<leader>tl", ":Telescope live_grep<CR>", opts)
+keymap("n", "<leader>tm", ":Telescope media_files<CR>", opts)
 keymap("n", "<leader>tg", ":Telescope git_status<CR>", opts)
 keymap("n", "<leader>tts", ":Telescope treesitter<CR>", opts)
 

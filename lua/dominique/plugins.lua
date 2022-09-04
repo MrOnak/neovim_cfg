@@ -1,18 +1,9 @@
--- This file can be loaded by calling `lua require('plugins')` from your init.vim
-
 local fn = vim.fn
 
 -- BOOTSTRAP Automatically install packer
 local install_path = fn.stdpath "data" .. "/site/pack/packer/start/packer.nvim"
 if fn.empty(fn.glob(install_path)) > 0 then
-  PACKER_BOOTSTRAP = fn.system {
-    "git",
-    "clone",
-    "--depth",
-    "1",
-    "https://github.com/wbthomason/packer.nvim",
-    install_path,
-  }
+  PACKER_BOOTSTRAP = fn.system({"git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim", install_path})
   print "Installing packer close and reopen Neovim..."
   vim.cmd [[packadd packer.nvim]]
 end
@@ -31,9 +22,6 @@ packer.init {
     end,
   },
 }
-
--- Only required if you have packer configured as `opt`
---vim.cmd [[packadd packer.nvim]]
 
 return packer.startup(function(use)
   -- Packer can manage itself
@@ -92,9 +80,9 @@ return packer.startup(function(use)
       {'sharkdp/fd'},
       {'nvim-lua/plenary.nvim'},
       {'kyazdani42/nvim-web-devicons'},
-      --{'nvim-telescope/telescope-media-files.nvim'},
-      --{"nvim-telescope/telescope-symbols.nvim"},
-      --{'nvim-telescope/telescope-fzf-native.nvim', run = 'make'},
+      {'nvim-telescope/telescope-media-files.nvim'},
+      {"nvim-telescope/telescope-symbols.nvim"},
+      {'nvim-telescope/telescope-fzf-native.nvim', run = 'make'},
     }
   }
 
@@ -107,4 +95,10 @@ return packer.startup(function(use)
     }
   }
 
+  -- Automatically set up your configuration after cloning packer.nvim
+  -- Put this at the end after all plugins
+  if packer_bootstrap then
+    require('packer').sync()
+  end
 end)
+
