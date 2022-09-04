@@ -36,11 +36,12 @@ keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
 -- telescope fuzzy finder
-keymap("n", "<leader>f", ":Telescope find_files<CR>", opts)
-keymap("n", "<leader>b", ":Telescope buffers<CR>", opts)
-keymap("n", "<leader>l", ":Telescope live_grep<CR>", opts)
-keymap("n", "<leader>g", ":Telescope git_status<CR>", opts)
-keymap("n", "<leader>ts", ":Telescope treesitter<CR>", opts)
+keymap("n", "<leader>t", ":Telescope<CR>", opts)
+keymap("n", "<leader>tf", ":Telescope find_files<CR>", opts)
+keymap("n", "<leader>tb", ":Telescope buffers<CR>", opts)
+keymap("n", "<leader>tl", ":Telescope live_grep<CR>", opts)
+keymap("n", "<leader>tg", ":Telescope git_status<CR>", opts)
+keymap("n", "<leader>tts", ":Telescope treesitter<CR>", opts)
 
 -- telekasten
 keymap("n", "<leader>z", ":Telekasten panel<CR>", opts)
