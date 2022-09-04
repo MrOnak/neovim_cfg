@@ -84,13 +84,28 @@ return packer.startup(function(use)
   use {
     'nvim-telescope/telescope.nvim', tag = '0.1.0',
     requires= {
+      {'nvim-telescope/telescope-media-files.nvim'},
+      --{'nvim-telescope/telescope-fzf-native.nvim'},
+      --{'nvim-telescope/telescope-fzy-native.nvim'},
       {'nvim-lua/plenary.nvim'},
       {'kyazdani42/nvim-web-devicons'},
       {'BurntSushi/ripgrep'},
-      {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
       {'sharkdp/fd'},
     }
   }
+
+  -- telekasten: a zettelkasten-inspired, markdown-based note app
+  -- https://github.com/renerocksai/telekasten.nvim
+  use {
+    "renerocksai/telekasten.nvim",
+    requires = {
+      {"nvim-telescope/telescope-symbols.nvim"},
+    }
+  }
+
+  -- a fzf integration separate from telescope since I can't get that to work
+--  use 'ibhagwan/fzf-lua'
+--  use {'junegunn/fzf', run = './install --bin', }
 
   -- snippets
   use "L3MON4D3/LuaSnip"              -- snippet engine, require by cmp

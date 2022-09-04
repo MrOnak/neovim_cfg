@@ -1,5 +1,3 @@
-local M = {}
-
 local status_ok, telescope = pcall(require, "telescope")
 if not status_ok then
   return
@@ -20,7 +18,6 @@ telescope.setup {
         -- map actions.which_key to <C-h> (default: <C-/>)
         -- actions.which_key shows the mappings for your picker,
         -- e.g. git_{create, delete, ...}_branch for the git_branches picker
-        ["<C-h>"] = "which_key"
       }
     }
   },
@@ -45,11 +42,26 @@ telescope.setup {
       override_file_sorter = true,     -- override the file sorter
       case_mode = "smart_case",        -- or "ignore_case" or "respect_case"
                                        -- the default case_mode is "smart_case"
+    },
+    fzy_native = {
+      override_generic_sorter = false,
+      override_file_sorter = true,
+    },
+    media_files = {
+      -- filetypes whitelist
+      -- defaults to {"png", "jpg", "mp4", "webm", "pdf"}
+      filetypes = {"png", "webp", "jpg", "jpeg"},
+      find_cmd = "rg" -- find command (defaults to `fd`)
     }
   }
 }
 
+-- ==============================================================================
+--   LOAD EXTENSIONS
+-- ==============================================================================
 -- this won't work because to my understanding lua FFI isn't available for ARM :(
 -- needs more research
--- telescope.load_extension('fzf')
+--telescope.load_extension('fzf')
+--telescope.load_extension('fzy_native')
+telescope.load_extension('media_files')
 
