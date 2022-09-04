@@ -55,9 +55,6 @@ return packer.startup(function(use)
   use "L3MON4D3/LuaSnip"              -- snippet engine, require by cmp
   use "rafamadriz/friendly-snippets"  -- a bunch of community curated snippets
 
-  -- languages
-  use "folke/lua-dev.nvim"            -- useful for sumneko_lua LSP
-
   -- Treesitter
   use {
     "nvim-treesitter/nvim-treesitter",
@@ -74,15 +71,15 @@ return packer.startup(function(use)
 
   -- telescope fuzzy finder
   use {
-    'nvim-telescope/telescope.nvim', tag = '0.1.0',
+    "nvim-telescope/telescope.nvim", tag = "0.1.0",
     requires = {
-      {'BurntSushi/ripgrep'},
-      {'sharkdp/fd'},
-      {'nvim-lua/plenary.nvim'},
-      {'kyazdani42/nvim-web-devicons'},
-      {'nvim-telescope/telescope-media-files.nvim'},
+      {"BurntSushi/ripgrep"},
+      {"sharkdp/fd"},
+      {"nvim-lua/plenary.nvim"},
+      {"kyazdani42/nvim-web-devicons"},
+      {"nvim-telescope/telescope-media-files.nvim"},
       {"nvim-telescope/telescope-symbols.nvim"},
-      {'nvim-telescope/telescope-fzf-native.nvim', run = 'make'},
+      {"nvim-telescope/telescope-fzf-native.nvim", run = "make"},
     }
   }
 
@@ -92,6 +89,15 @@ return packer.startup(function(use)
     "renerocksai/telekasten.nvim",
     requires = {
       {"nvim-telescope/telescope-symbols.nvim"},
+    }
+  }
+
+  -- all things LSP
+  use {
+    "neovim/nvim-lspconfig",
+    requires = {
+      {"williamboman/mason.nvim"},      -- LSP installer, among other things
+      {"folke/lua-dev.nvim"},           -- useful for sumneko_lua LSP
     }
   }
 
