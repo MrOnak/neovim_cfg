@@ -12,7 +12,7 @@ indicating in which mode the command is active:
 | terminal mode      | t |
 | command mode       | c |
 
-the `<leader`> key is the space character
+the `<leader>` key is the space character
 
 my whole NeoVim config is on github: https://github.com/MrOnak/neovim_cfg
 
@@ -48,7 +48,7 @@ my whole NeoVim config is on github: https://github.com/MrOnak/neovim_cfg
 ### in-line movements
 | mode | key seq.  | description |
 | ---- | --------- | ----------- |
-| n    | `<cr`>    | moves to the first character in the next line down |
+| n    | `<cr>`    | moves to the first character in the next line down |
 | n    | 0         | move to beginning of line |
 | n    | ^         | move to first non-whitespace character in line |
 | n    | $         | move to end of line |
@@ -77,12 +77,12 @@ my whole NeoVim config is on github: https://github.com/MrOnak/neovim_cfg
 | n    | *         | do a forward-search for word under cursor |
 | n    | #         | do a backward-search for word under cursor |
 | n    | ciw       | quickly replace word under cursor |
-| n    | /         | start searching for phrase (after <cr>) |
+| n    | /         | start searching for phrase (after `<cr>`) |
 | n    | n         | find next occurance |
 | n    | Shift-n   | find previous occurance |
 
 ### copy & paste
-| mode | key seq.  | description |
+| mode | key seq. | description |
 | ---- | --------- | ----------- |
 | n    | i         | enter insert mode to the left of the cursor |
 | n    | yy        | copy current line |
@@ -112,12 +112,12 @@ my whole NeoVim config is on github: https://github.com/MrOnak/neovim_cfg
 ### navigating and creating windows
 | mode | key seq.  | description |
 | ---- | --------- | ----------- |
-| n    | `<C-w`>s  | split current window horizontally |
-| n    | `<C-w`>v  | split current window vertically |
-| n    | `<C-w`>o  | closes all but current split |
-| n    | `<C-w`>=  | equally resize all splits |
-| n    | `<C-w`>r  | rotate splits |
-| n    | `<C-w`>H  | change from vertical to horizontal split |
+| n    | `<C-w>`s  | split current window horizontally |
+| n    | `<C-w>`v  | split current window vertically |
+| n    | `<C-w>`o  | closes all but current split |
+| n    | `<C-w>`=  | equally resize all splits |
+| n    | `<C-w>`r  | rotate splits |
+| n    | `<C-w>`H  | change from vertical to horizontal split |
 
 (commands below are customized in .config/nvim/after/plugin/remap.lua) |
 | mode | key seq.    | description |
@@ -126,10 +126,10 @@ my whole NeoVim config is on github: https://github.com/MrOnak/neovim_cfg
 | n    | Ctrl-l      | move to window to the right |
 | n    | Ctrl-j      | move to window that is below current |
 | n    | Ctrl-k      | move to window that is above current |
-| n    | `<C-Left`>  | Ctrl-Cursor left makes current window more narrow |
-| n    | `<C-Right`> | makes current window wider |
-| n    | `<C-Up`>    | makes current window taller |
-| n    | `<C-Down`>  | makes current window less tall |
+| n    | `<C-Left>`  | Ctrl-Cursor left makes current window more narrow |
+| n    | `<C-Right>` | makes current window wider |
+| n    | `<C-Up>`    | makes current window taller |
+| n    | `<C-Down>`  | makes current window less tall |
 
 ## Inserting and Editing
 | mode | key seq.  | description |
@@ -158,7 +158,7 @@ normal movement keys 'hjkl' do work in nvim-tree (as per custom config)
 
 | mode | key seq.    | description |
 | ---- | ----------- | ----------- |
-| n    | `<leader`>e | toggle tree explorer on the left side (as per config) |
+| n    | `<leader>`e | toggle tree explorer on the left side (as per config) |
 | n    | h           | closes an opened directory |
 | n    | l           | opens a closed directory |
 | n    | c           | puts file/folder on current line in the clipboard |
