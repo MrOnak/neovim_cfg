@@ -67,7 +67,7 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-path"              -- extension for path completions 
   use "hrsh7th/cmp-cmdline"           -- extension for command-line completions
   use "saadparwaiz1/cmp_luasnip"      -- extension for snippet completions
-  use "hrsh7th/cmp-nvim-lsp"          -- extension for LSP completions in cmp
+--  use "hrsh7th/cmp-nvim-lsp"          -- extension for LSP completions in cmp
 
   -- telescope fuzzy finder
   use {

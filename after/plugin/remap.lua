@@ -62,7 +62,7 @@ keymap("n", "<leader>zls", ":Telekasten show_backlinks<CR>", opts)
 
 -- LSP base keybinds 
 -- more are available in .../lua/dominique/lsp/setup.lua since they are attached per LSP
-vim.keymap.set("n", "<leader>l", vim.diagnostic.open_float, opts)
+vim.keymap.set("n", "<leader>ll", vim.diagnostic.open_float, opts)
 vim.keymap.set("n", "<leader>lb", vim.diagnostic.goto_prev, opts)
 vim.keymap.set("n", "<leader>lw", vim.diagnostic.goto_next, opts)
 vim.keymap.set("n", "<leader>lq", vim.diagnostic.setloclist, opts)
