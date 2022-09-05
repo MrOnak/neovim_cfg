@@ -35,6 +35,14 @@ keymap("n", "<C-Down>", ":resize +2<CR>", opts)
 keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
+-- navigate buffers
+keymap("n", "<S-l>", ":bnext<CR>", opts)
+keymap("n", "<S-h>", ":bprevious<CR>", opts)
+
+---- TERMINAL MODE
+-- get out of interactive mode on German keyboard (C-\ doesn't exist)
+keymap("t", "<C-q>", "<C-\\><C-N>", term_opts)
+
 -- telescope fuzzy finder
 keymap("n", "<leader>t", ":Telescope<CR>", opts)
 keymap("n", "<leader>tf", ":Telescope find_files<CR>", opts)
@@ -52,11 +60,10 @@ keymap("n", "<leader>zln", ":Telekasten insert_link<CR>", opts)
 keymap("n", "<leader>zlf", ":Telekasten follow_link<CR>", opts)
 keymap("n", "<leader>zls", ":Telekasten show_backlinks<CR>", opts)
 
--- navigate buffers
-keymap("n", "<S-l>", ":bnext<CR>", opts)
-keymap("n", "<S-h>", ":bprevious<CR>", opts)
-
----- TERMINAL MODE
--- get out of interactive mode on German keyboard (C-\ doesn't exist)
-keymap("t", "<C-q>", "<C-\\><C-N>", term_opts)
+-- LSP base keybinds 
+-- more are available in .../lua/dominique/lsp/setup.lua since they are attached per LSP
+vim.keymap.set("n", "<leader>l", vim.diagnostic.open_float, opts)
+vim.keymap.set("n", "<leader>lb", vim.diagnostic.goto_prev, opts)
+vim.keymap.set("n", "<leader>lw", vim.diagnostic.goto_next, opts)
+vim.keymap.set("n", "<leader>lq", vim.diagnostic.setloclist, opts)
 
