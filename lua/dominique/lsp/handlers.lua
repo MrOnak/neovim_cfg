@@ -2,6 +2,10 @@ local status_lspc_ok, lspconfig = pcall(require, "lspconfig")
 if not status_lspc_ok then
   return
 end
+local status_cmp_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
+if not status_cmp_ok then
+  return
+end
 
 print("LSP language handlers")
 -- Use an on_attach function to only map the following keys
@@ -35,17 +39,67 @@ local lsp_flags = {
   debounce_text_changes = 150,
 }
 
+-- The nvim-cmp almost supports LSP's capabilities so You should advertise it to LSP servers..
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
+
 -- setup all language servers, supply them with above configuration
 -- ================================================================
-lspconfig["bashls"].setup { on_attach = on_attach, flags = lsp_flags } -- shell script
+-- shell script
+lspconfig["bashls"].setup {
+  on_attach = on_attach,
+  flags = lsp_flags,
+  capabilities = capabilities
+}
 -- clangd wasn't installed through Mason since it couldn't find the right binary for ARM (installed thru apt)
-lspconfig["clangd"].setup { on_attach = on_attach, flags = lsp_flags } -- c/c++/...
-lspconfig["cssls"].setup { on_attach = on_attach, flags = lsp_flags }
-lspconfig["dotls"].setup { on_attach = on_attach, flags = lsp_flags } -- dot / graphviz
-lspconfig["html"].setup { on_attach = on_attach, flags = lsp_flags }
-lspconfig["jsonls"].setup { on_attach = on_attach, flags = lsp_flags } -- json
-lspconfig["solargraph"].setup { on_attach = on_attach, flags = lsp_flags } -- ruby
-lspconfig["sumneko_lua"].setup { on_attach = on_attach, flags = lsp_flags }
--- markdown
-lspconfig["tsserver"].setup { on_attach = on_attach, flags = lsp_flags }
-lspconfig["yamlls"].setup { on_attach = on_attach, flags = lsp_flags } -- yaml
+-- c/c++/...
+lspconfig["clangd"].setup {
+  on_attach = on_attach,
+  flags = lsp_flags,
+  capabilities = capabilities
+}
+lspconfig["cssls"].setup {
+  on_attach = on_attach,
+  flags = lsp_flags,
+  capabilities = capabilities
+}
+-- dot / graphviz
+lspconfig["dotls"].setup {
+  on_attach = on_attach,
+  flags = lsp_flags,
+  capabilities = capabilities
+}
+lspconfig["html"].setup {
+  on_attach = on_attach,
+  flags = lsp_flags,
+  capabilities = capabilities
+}
+-- json
+lspconfig["jsonls"].setup {
+  on_attach = on_attach,
+  flags = lsp_flags,
+  capabilities = capabilities
+}
+-- ruby
+lspconfig["solargraph"].setup {
+  on_attach = on_attach,
+  flags = lsp_flags,
+  capabilities = capabilities
+}
+lspconfig["sumneko_lua"].setup {
+  on_attach = on_attach,
+  flags = lsp_flags,
+  capabilities = capabilities
+}
+-- markdown missing
+lspconfig["tsserver"].setup {
+  on_attach = on_attach,
+  flags = lsp_flags,
+  capabilities = capabilities
+}
+-- yaml
+lspconfig["yamlls"].setup {
+  on_attach = on_attach,
+  flags = lsp_flags,
+  capabilities = capabilities
+}
