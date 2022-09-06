@@ -37,14 +37,15 @@ local lsp_flags = {
 
 -- setup all language servers, supply them with above configuration
 -- ================================================================
-lspconfig["bashls"].setup { on_attach = on_attach, flags = lsp_flags } -- attaches
+lspconfig["bashls"].setup { on_attach = on_attach, flags = lsp_flags } -- shell script
 -- clangd wasn't installed through Mason since it couldn't find the right binary for ARM (installed thru apt)
-lspconfig["clangd"].setup { on_attach = on_attach, flags = lsp_flags } -- attaches
+lspconfig["clangd"].setup { on_attach = on_attach, flags = lsp_flags } -- c/c++/...
 lspconfig["cssls"].setup { on_attach = on_attach, flags = lsp_flags }
-lspconfig["dotls"].setup { on_attach = on_attach, flags = lsp_flags } -- attaches
+lspconfig["dotls"].setup { on_attach = on_attach, flags = lsp_flags } -- dot / graphviz
 lspconfig["html"].setup { on_attach = on_attach, flags = lsp_flags }
-lspconfig["jsonls"].setup { on_attach = on_attach, flags = lsp_flags } -- attaches
+lspconfig["jsonls"].setup { on_attach = on_attach, flags = lsp_flags } -- json
+lspconfig["solargraph"].setup { on_attach = on_attach, flags = lsp_flags } -- ruby
 lspconfig["sumneko_lua"].setup { on_attach = on_attach, flags = lsp_flags }
 -- markdown
 lspconfig["tsserver"].setup { on_attach = on_attach, flags = lsp_flags }
-lspconfig["yamlls"].setup { on_attach = on_attach, flags = lsp_flags } -- attaches
+lspconfig["yamlls"].setup { on_attach = on_attach, flags = lsp_flags } -- yaml
