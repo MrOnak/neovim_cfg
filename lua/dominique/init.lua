@@ -8,3 +8,5 @@ require("dominique.statusbar")          -- configuring the statusbar
 require("dominique.telescope")          -- fuzzy finder
 require("dominique.telekasten")         -- zettelkasten-esque addition to telescope
 require("dominique.lsp")                -- all the LSPs
+require("dominique.tokyonight")         -- stylesheet
+
