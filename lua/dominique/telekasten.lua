@@ -5,7 +5,7 @@ end
 
 print("setting up telekasten")
 
-local home = vim.fn.expand("~/Documents/markdown")
+local home = vim.fn.expand("~/Documents/zettelkasten")
 telekasten.setup({
     home         = home,
 
